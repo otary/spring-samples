@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.chenzw.cn/schema/sso"
+        xmlns:tns="http://www.chenzw.cn/schema/sso" elementFormDefault="qualified">
+    <element name="template-scan" type="sso:template-scanType" xmlns:sso="http://www.chenzw.cn/schema/sso"/>
+    <complexType name="template-scanType">
+        <simpleContent>
+            <extension base="string">
+                <attribute type="string" name="base-package"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>
