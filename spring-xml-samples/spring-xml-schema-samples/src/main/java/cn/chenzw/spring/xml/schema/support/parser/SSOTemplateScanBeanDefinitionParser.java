@@ -13,7 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * ±êÇ©½âÎöÆ÷
+ * æ ‡ç­¾è§£æå™¨
  * @author chenzw
  */
 public class SSOTemplateScanBeanDefinitionParser implements BeanDefinitionParser {
@@ -33,9 +33,6 @@ public class SSOTemplateScanBeanDefinitionParser implements BeanDefinitionParser
         for (BeanDefinition bean : beans) {
             parserContext.getReaderContext().getRegistry().registerBeanDefinition(bean.getBeanClassName(), bean);
         }
-
         return null;
     }
-
-
 }

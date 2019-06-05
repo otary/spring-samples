@@ -4,7 +4,7 @@ import cn.chenzw.spring.xml.schema.support.parser.SSOTemplateScanBeanDefinitionP
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
- * XMLÃüÃû¿Õ¼ä´¦ÀíÆ÷
+ * XMLå‘½åç©ºé—´å¤„ç†å™¨
  * @author chenzw
  */
 public class SSONamespaceHandler extends NamespaceHandlerSupport {

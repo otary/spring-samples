@@ -1,13 +1,13 @@
 # spring-samples
 
 
-- **spring-xml-schema-samples**: ×Ô¶¨Òå±êÇ©
+- **spring-xml-schema-samples**: è‡ªå®šä¹‰æ ‡ç­¾
 
 
 ---
 ##### spring-xml-schema-samples
 
-×Ô¶¨Òå±êÇ©
+è‡ªå®šä¹‰æ ‡ç­¾
 
 ```
 <beans xmlns="http://www.springframework.org/schema/beans"

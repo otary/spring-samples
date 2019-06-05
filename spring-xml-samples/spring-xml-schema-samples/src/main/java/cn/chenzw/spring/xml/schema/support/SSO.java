@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- *
+ * 用于标识被扫描的类
  * @author chenzw
  */
 @Target(ElementType.TYPE)
