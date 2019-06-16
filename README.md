@@ -1,8 +1,13 @@
 # spring-samples
 
 
-- **[spring-xml-schema-samples](spring-xml-samples/spring-xml-schema-samples)**: 自定义标签示例
+![spring](https://img.shields.io/badge/spring-4.3.24.RELEASE-green.svg)
+![jdk](https://img.shields.io/badge/jdk-1.8-green.svg)
 
+- **[spring-xml-samples](spring-xml-samples)**
+  - **[spring-xml-schema-samples](spring-xml-samples/spring-xml-schema-samples)**: 自定义标签示例
+
+- **[spring-annotation-samples](spring-annotation-samples)**
 
 ---
 ## spring-xml-schema-samples
