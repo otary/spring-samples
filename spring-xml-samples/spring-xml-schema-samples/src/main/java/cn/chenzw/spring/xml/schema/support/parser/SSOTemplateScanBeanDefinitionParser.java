@@ -18,6 +18,7 @@ import java.util.Set;
  */
 public class SSOTemplateScanBeanDefinitionParser implements BeanDefinitionParser {
 
+    @Override
     public BeanDefinition parse(Element element, ParserContext parserContext) {
         String basePackage = element.getAttribute("base-package");
         basePackage = parserContext.getReaderContext().getEnvironment().resolvePlaceholders(basePackage);

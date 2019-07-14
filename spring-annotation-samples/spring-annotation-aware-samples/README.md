@@ -2,7 +2,19 @@
 
 aware、initializer示例
 
+#### 接口
 
+> 生命周期
+- SmartLifecycle
+- WebInitializer
+
+> 回调函数
+- BeanNameAware
+- BeanFactoryAware
+- ResourceLoaderAware
+- MessageSourceAware
+- ApplicationContextAware
+- ServletContextAware
 
 #### 运行
 
