@@ -18,7 +18,7 @@ aware、initializer示例
 
 #### 运行
 
-mvn tomcat7:run
+`$ mvn tomcat7:run`
 
 
 ```
@@ -34,4 +34,7 @@ istenerFactory,appConfig,appBean]; root of factory hierarchy
 - MessageSourceAware:org.springframework.web.context.support.GenericWebApplicationContext@5e3a8624: startup date [Sat Jul 13 12:57:10 CST 2019]; root of context hierarchy
 - ApplicationContextAware:org.springframework.web.context.support.GenericWebApplicationContext@5e3a8624: startup date [Sat Jul 13 12:57:10 CST 2019]; root of context hierarchy
 - ServletContextAware:org.springframework.mock.web.MockServletContext@6f96c77
+
+----------SmartLifeStyle start--------------
+
 ```
