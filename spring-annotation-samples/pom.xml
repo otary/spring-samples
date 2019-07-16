@@ -15,6 +15,7 @@
         <module>spring-annotation-el-samples</module>
         <module>spring-annotation-profile-samples</module>
         <module>spring-annotation-aware-samples</module>
+        <module>spring-annotation-web-samples</module>
     </modules>
 
 
