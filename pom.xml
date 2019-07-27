@@ -10,6 +10,7 @@
     <modules>
         <module>spring-xml-samples</module>
         <module>spring-annotation-samples</module>
+        <module>spring-tomcat-samples</module>
     </modules>
     <packaging>pom</packaging>
 
