@@ -9,12 +9,15 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.*;
+import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
 
-public class App implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware, ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor, BeanDefinitionRegistryPostProcessor {
+public class AppForAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware,
+        ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor,
+        BeanDefinitionRegistryPostProcessor{
 
     /**
      * 获取容器
@@ -75,7 +78,8 @@ public class App implements BeanNameAware, BeanFactoryAware, ApplicationContextA
 
 
     @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory)
+            throws BeansException {
         System.out.println("- BeanFactoryPostProcessor:" + configurableListableBeanFactory);
     }
 

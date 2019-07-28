@@ -18,6 +18,9 @@ aware、initializer示例
 - BeanDefinitionRegistryPostProcessor
 - BeanFactoryPostProcessor
 
+> 事件监听
+- ApplicationListener
+
 > bean回调函数
 - InstantiationAwareBeanPostProcessor：每个bean实例化时的回调函数
 #### 运行

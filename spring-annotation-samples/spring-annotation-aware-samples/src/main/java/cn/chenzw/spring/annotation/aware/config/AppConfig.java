@@ -1,7 +1,8 @@
 package cn.chenzw.spring.annotation.aware.config;
 
-import cn.chenzw.spring.annotation.aware.bean.App;
-import cn.chenzw.spring.annotation.aware.bean.App2;
+import cn.chenzw.spring.annotation.aware.bean.AppForAware;
+import cn.chenzw.spring.annotation.aware.bean.AppForListener;
+import cn.chenzw.spring.annotation.aware.bean.AppForProcessor;
 import cn.chenzw.spring.annotation.aware.lifecycle.CustomSmartLifeStyle;
 import org.springframework.context.Lifecycle;
 import org.springframework.context.annotation.Bean;
@@ -10,15 +11,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-
     @Bean
-    public App appBean() {
-        return new App();
+    public AppForAware appBean() {
+        return new AppForAware();
     }
 
     @Bean
-    public App2 appBean2() {
-        return new App2();
+    public AppForProcessor appBean2() {
+        return new AppForProcessor();
+    }
+
+    @Bean
+    public AppForListener appBean3() {
+        return new AppForListener();
     }
 
     @Bean
