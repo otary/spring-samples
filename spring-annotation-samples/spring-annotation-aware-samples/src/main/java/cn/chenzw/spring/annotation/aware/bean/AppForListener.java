@@ -5,8 +5,13 @@ import org.springframework.context.event.ContextRefreshedEvent;
 
 public class AppForListener implements ApplicationListener<ContextRefreshedEvent> {
 
+    /**
+     * 容器刷新事件
+     *
+     * @param event
+     */
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        System.out.println("---- ApplicationListener:" + event);
+        System.out.println("---- ApplicationListener:" + event.getApplicationContext());
     }
 }
