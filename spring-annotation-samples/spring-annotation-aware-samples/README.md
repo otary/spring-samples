@@ -23,6 +23,12 @@ aware、initializer示例
 
 > bean回调函数
 - InstantiationAwareBeanPostProcessor：每个bean实例化时的回调函数
+
+> bean 初始化
+
+- InitializingBean
+
+
 #### 运行
 
 `$ mvn tomcat7:run`
