@@ -1,5 +1,6 @@
 package cn.chenzw.spring.annotation.profile.template;
 
+import cn.chenzw.spring.annotation.profile.template.core.SSOTemplate;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
