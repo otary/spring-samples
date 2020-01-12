@@ -10,6 +10,7 @@ aware、initializer示例
 
 > 回调函数
 - BeanNameAware
+- BeanClassLoader
 - BeanFactoryAware
 - ResourceLoaderAware
 - MessageSourceAware
@@ -23,6 +24,7 @@ aware、initializer示例
 
 > bean回调函数
 - InstantiationAwareBeanPostProcessor：每个bean实例化时的回调函数
+
 #### 运行
 
 `$ mvn tomcat7:run`
@@ -33,6 +35,7 @@ aware、initializer示例
 ---------WebInitializer2 startup---------------
 
 - BeanNameAware:appBean
+- BeanClassLoader:sun.misc.Launcher$AppClassLoader@18b4aac2
 - BeanFactoryAware:org.springframework.beans.factory.support.DefaultListableBeanFactory@7ba18f1b: defining beans [org.springframework.context.annotation.internalConfigurationAnn
 otationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.sprin
 gframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventL

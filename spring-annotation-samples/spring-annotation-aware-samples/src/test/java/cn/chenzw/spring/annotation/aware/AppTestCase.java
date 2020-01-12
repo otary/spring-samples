@@ -22,7 +22,6 @@ public class AppTestCase {
     @Test
     public void testAware() {
 
-
     }
 
     @Test

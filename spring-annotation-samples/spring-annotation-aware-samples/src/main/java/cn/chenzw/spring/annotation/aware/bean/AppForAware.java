@@ -1,6 +1,7 @@
 package cn.chenzw.spring.annotation.aware.bean;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
@@ -17,7 +18,7 @@ import javax.servlet.ServletContext;
 
 public class AppForAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware,
         ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor,
-        BeanDefinitionRegistryPostProcessor{
+        BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware {
 
     /**
      * 获取容器
@@ -86,5 +87,10 @@ public class AppForAware implements BeanNameAware, BeanFactoryAware, Application
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
         System.out.println("- BeanDefinitionRegistryPostProcessor:" + beanDefinitionRegistry);
+    }
+
+    @Override
+    public void setBeanClassLoader(ClassLoader classLoader) {
+        System.out.println("- BeanClassLoader:" + classLoader);
     }
 }
