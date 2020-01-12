@@ -1,4 +1,4 @@
-package cn.chenzw.spring.annotation.profile.template;
+package cn.chenzw.spring.annotation.profile.template.core;
 
 public interface SSOTemplate {
 

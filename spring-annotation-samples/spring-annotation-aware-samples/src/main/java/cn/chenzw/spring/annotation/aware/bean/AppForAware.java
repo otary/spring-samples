@@ -16,6 +16,11 @@ import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
 
+/**
+ * Aware示例
+ *
+ * @author chenzw
+ */
 public class AppForAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware,
         ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor,
         BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware {

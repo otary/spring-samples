@@ -11,6 +11,7 @@
         <module>spring-xml-samples</module>
         <module>spring-annotation-samples</module>
         <module>spring-tomcat-samples</module>
+        <module>spring-feature-samples</module>
     </modules>
     <packaging>pom</packaging>
 

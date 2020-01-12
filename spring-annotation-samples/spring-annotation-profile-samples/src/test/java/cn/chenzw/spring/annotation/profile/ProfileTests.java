@@ -1,12 +1,11 @@
 package cn.chenzw.spring.annotation.profile;
 
 import cn.chenzw.spring.annotation.profile.config.ProfileConfig;
-import cn.chenzw.spring.annotation.profile.template.SSOTemplate;
+import cn.chenzw.spring.annotation.profile.template.core.SSOTemplate;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
