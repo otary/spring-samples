@@ -8,7 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.HandlesTypes;
 import java.util.Set;
 
-/**
+/**RegistryPost
  * 需要在META-INF/services/javax.servlet.ServletContainerInitializer中进行注册
  */
 @HandlesTypes(WebApplicationInitializer.class)

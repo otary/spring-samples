@@ -23,7 +23,7 @@ import javax.servlet.ServletContext;
  */
 public class AppForAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware,
         ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor,
-        BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware {
+        BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware, ApplicationEventPublisherAware {
 
     /**
      * 获取容器
@@ -97,5 +97,12 @@ public class AppForAware implements BeanNameAware, BeanFactoryAware, Application
     @Override
     public void setBeanClassLoader(ClassLoader classLoader) {
         System.out.println("- BeanClassLoader:" + classLoader);
+    }
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        System.out.println("- ApplicationEventPublisher:" + applicationEventPublisher);
+
+        applicationEventPublisher.publishEvent("我发布的消息！");
     }
 }
