@@ -9,10 +9,11 @@
 
 - [spring-annotation-samples](spring-annotation-samples): JavaConfig配置方式
   - [spring-annotation-aware-samples](spring-annotation-samples/spring-annotation-aware-samples): aware示例
-  - [spring-annotation-el-samples](spring-annotation-samples/spring-annotation-el-samples)
+  - [spring-annotation-el-samples](spring-annotation-samples/spring-annotation-el-samples): el表达式
   - [spring-annotation-profile-samples](spring-annotation-samples/spring-annotation-profile-samples): profile示例
 
-- [spring-tomcat-samples](spring-tomcat-samples)
+- [spring-tomcat-samples](spring-tomcat-samples):
+- [spring-feature-samples](spring-feature-samples): 扩展特性示例
 
 
 ---
