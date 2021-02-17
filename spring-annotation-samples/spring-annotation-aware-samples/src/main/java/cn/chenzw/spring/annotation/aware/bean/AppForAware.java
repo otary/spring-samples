@@ -10,8 +10,8 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.context.*;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.util.StringValueResolver;
 import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
@@ -23,7 +23,7 @@ import javax.servlet.ServletContext;
  */
 public class AppForAware implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, MessageSourceAware,
         ApplicationEventPublisher, ResourceLoaderAware, ServletContextAware, BeanFactoryPostProcessor,
-        BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware, ApplicationEventPublisherAware {
+        BeanDefinitionRegistryPostProcessor, BeanClassLoaderAware, ApplicationEventPublisherAware, EmbeddedValueResolverAware {
 
     /**
      * 获取容器
@@ -104,5 +104,10 @@ public class AppForAware implements BeanNameAware, BeanFactoryAware, Application
         System.out.println("- ApplicationEventPublisher:" + applicationEventPublisher);
 
         applicationEventPublisher.publishEvent("我发布的消息！");
+    }
+
+    @Override
+    public void setEmbeddedValueResolver(StringValueResolver resolver) {
+        System.out.println("- EmbeddedValueResolver:" + resolver);
     }
 }

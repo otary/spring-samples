@@ -9,6 +9,7 @@ aware、initializer示例
 - WebInitializer
 
 > 回调函数
+- EmbeddedValueResolverAware
 - BeanNameAware
 - BeanClassLoader
 - BeanFactoryAware
@@ -29,6 +30,7 @@ aware、initializer示例
 > bean 初始化
 
 - InitializingBean
+- SmartInitializingSingleton
 
 
 #### 运行
