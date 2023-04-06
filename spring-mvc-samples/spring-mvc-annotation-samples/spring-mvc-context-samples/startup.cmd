@@ -1,0 +1,1 @@
+mvnw tomcat7:run
