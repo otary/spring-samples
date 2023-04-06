@@ -1,0 +1,15 @@
+#logging:
+#  level:
+#    web: trace
+#    sql: trace
+#    root: info
+
+
+spring:
+  mvc:
+    static-path-pattern: /**
+
+
+cust:
+  # base64("otary")
+  passwd: b3Rhcnk=

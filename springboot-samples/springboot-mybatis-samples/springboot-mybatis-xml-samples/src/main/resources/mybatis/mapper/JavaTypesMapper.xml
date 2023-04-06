@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.chenzw.springboot.mybatis.xml.repository.JavaTypesMapper">
+
+    <resultMap id="javaTypesEntity" type="cn.chenzw.springboot.mybatis.xml.domain.entity.JavaTypesEntity">
+        <result column="bigdecimal_type" property="bigDecimalType"/>
+    </resultMap>
+
+    <select id="listAll" resultMap="javaTypesEntity">
+        select *
+        from java_types_entity jte
+        <where>
+            <if test="javaTypesEntityQueryDto != null ">
+                <if test="javaTypesEntityQueryDto.integerType != null">
+                    jte.integer_type = #{javaTypesEntityQueryDto.integerType}
+                </if>
+                <!-- 模糊查询 -->
+                <if test="javaTypesEntityQueryDto.varcharType != null and javaTypesEntityQueryDto.varcharType != ''">
+                    jte.varchar_type like CONCAT(CONCAT('%', #{javaTypesEntityQueryDto.varcharType}), '%')
+                </if>
+            </if>
+        </where>
+    </select>
+
+
+    <!-- 批量插入（List）-->
+    <insert id="insertBatch">
+        <if test="javaTypesEntities != null and javaTypesEntities.size() > 0">
+            insert into java_types_entity (
+            byte_type,
+            short_type,
+            character_type,
+            float_type,
+            integer_type,
+            long_type,
+            double_type,
+            bytes_type,
+            bigdecimal_type,
+            boolean_type,
+            date_type) VALUES
+            <foreach collection="javaTypesEntities" item="typeEntity" separator=",">
+                (
+                #{typeEntity.byteType},
+                #{typeEntity.shortType},
+                #{typeEntity.characterType},
+                #{typeEntity.integerType},
+                #{typeEntity.floatType},
+                #{typeEntity.longType},
+                #{typeEntity.doubleType},
+                #{typeEntity.byteType},
+                #{typeEntity.bigDecimalType},
+                #{typeEntity.booleanType},
+                #{typeEntity.dateType}
+                )
+            </foreach>
+        </if>
+    </insert>
+
+    <!-- 批量插入（数组）-->
+    <insert id="insertBatchOfArrary">
+        <if test="javaTypesEntities != null and javaTypesEntities.length > 0">
+            insert into java_types_entity (
+            byte_type,
+            short_type,
+            character_type,
+            float_type,
+            integer_type,
+            long_type,
+            double_type,
+            bytes_type,
+            bigdecimal_type,
+            boolean_type,
+            date_type) VALUES
+            <foreach collection="javaTypesEntities" item="typeEntity" separator=",">
+                (
+                #{typeEntity.byteType},
+                #{typeEntity.shortType},
+                #{typeEntity.characterType},
+                #{typeEntity.integerType},
+                #{typeEntity.floatType},
+                #{typeEntity.longType},
+                #{typeEntity.doubleType},
+                #{typeEntity.byteType},
+                #{typeEntity.bigDecimalType},
+                #{typeEntity.booleanType},
+                #{typeEntity.dateType}
+                )
+            </foreach>
+        </if>
+    </insert>
+
+    <!-- 批量插入（List）insert...select... -->
+    <insert id="insertBatch2">
+
+        <if test="javaTypesEntities != null and javaTypesEntities.size() > 0">
+            insert into java_types_entity (
+            byte_type,
+            short_type,
+            character_type,
+            float_type,
+            integer_type,
+            long_type,
+            double_type,
+            bytes_type,
+            bigdecimal_type,
+            boolean_type,
+            date_type)
+            <foreach collection="javaTypesEntities" item="typeEntity" separator="union">
+                select
+                #{typeEntity.byteType} as byte_type,
+                #{typeEntity.shortType} as short_type,
+                #{typeEntity.characterType} as character_type,
+                #{typeEntity.floatType} as float_type,
+                #{typeEntity.integerType} as integer_type,
+                #{typeEntity.longType} as long_type,
+                #{typeEntity.doubleType} as double_type,
+                #{typeEntity.byteType} as bytes_type,
+                #{typeEntity.bigDecimalType} as bigdecimal_type,
+                #{typeEntity.booleanType} as boolean_type,
+                #{typeEntity.dateType} as date_type
+                from dual
+            </foreach>
+        </if>
+    </insert>
+
+    <!-- 动态参数插入 -->
+    <insert id="insert3">
+        insert into java_types_entity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="javaTypesEntity.byteType != null">
+                byte_type,
+            </if>
+            <if test="javaTypesEntity.shortType != null">
+                short_type,
+            </if>
+            <if test="javaTypesEntity.characterType != null">
+                character_type,
+            </if>
+            <if test="javaTypesEntity.floatType != null">
+                float_type,
+            </if>
+            <if test="javaTypesEntity.integerType != null">
+                integer_type,
+            </if>
+            <if test="javaTypesEntity.longType != null">
+                long_type,
+            </if>
+            <if test="javaTypesEntity.doubleType != null">
+                double_type,
+            </if>
+            <if test="javaTypesEntity.bytesType != null">
+                bytes_type,
+            </if>
+            <if test="javaTypesEntity.bigDecimalType != null">
+                bigdecimal_type,
+            </if>
+            <if test="javaTypesEntity.booleanType != null">
+                boolean_type,
+            </if>
+            <if test="javaTypesEntity.dateType != null">
+                date_type,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="javaTypesEntity.byteType != null">
+                #{javaTypesEntity.byteType},
+            </if>
+            <if test="javaTypesEntity.shortType != null">
+                #{javaTypesEntity.shortType},
+            </if>
+            <if test="javaTypesEntity.characterType != null">
+                #{javaTypesEntity.characterType},
+            </if>
+            <if test="javaTypesEntity.floatType != null">
+                #{javaTypesEntity.floatType},
+            </if>
+            <if test="javaTypesEntity.integerType != null">
+                #{javaTypesEntity.integerType},
+            </if>
+            <if test="javaTypesEntity.longType != null">
+                #{javaTypesEntity.longType},
+            </if>
+            <if test="javaTypesEntity.doubleType != null">
+                #{javaTypesEntity.doubleType},
+            </if>
+            <if test="javaTypesEntity.bytesType != null">
+                #{javaTypesEntity.bytesType},
+            </if>
+            <if test="javaTypesEntity.bigDecimalType != null">
+                #{javaTypesEntity.bigDecimalType},
+            </if>
+            <if test="javaTypesEntity.booleanType != null">
+                #{javaTypesEntity.booleanType},
+            </if>
+            <if test="javaTypesEntity.dateType != null">
+                #{javaTypesEntity.dateType},
+            </if>
+        </trim>
+    </insert>
+
+    <!-- 批量删除（单字段） -->
+    <delete id="deleteBatch">
+        delete from java_types_entity
+        <where>
+            integer_type in
+            <foreach collection="javaTypesEntity" item="item" open="(" separator="," close=")">
+                #{item.integerType}
+            </foreach>
+        </where>
+    </delete>
+
+    <!-- 批量删除（多字段） -->
+    <delete id="deleteBatch2">
+        delete from java_types_entity
+        <where>
+            <foreach collection="javaTypesEntity" item="item" separator="or">
+                ( integer_type = #{item.integerType} and long_type = #{item.longType} )
+            </foreach>
+        </where>
+    </delete>
+
+
+    <select id="getMap" resultType="cn.chenzw.springboot.mybatis.xml.domain.entity.JavaTypesEntity">
+        select
+            byte_type,
+            short_type,
+            character_type,
+            float_type,
+            integer_type,
+            long_type,
+            double_type,
+            bytes_type,
+            bigdecimal_type,
+            boolean_type,
+            date_type,
+            varchar_type
+        from
+          java_types_entity
+
+    </select>
+
+
+    <select id="getMapList" resultType="cn.chenzw.springboot.mybatis.xml.domain.entity.JavaTypesEntity">
+         select
+            byte_type,
+            short_type,
+            character_type,
+            float_type,
+            integer_type,
+            long_type,
+            double_type,
+            bytes_type,
+            bigdecimal_type,
+            boolean_type,
+            date_type,
+            varchar_type
+        from
+          java_types_entity
+    </select>
+</mapper>

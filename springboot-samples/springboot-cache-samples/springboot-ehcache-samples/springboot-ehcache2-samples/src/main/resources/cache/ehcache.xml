@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="true"
+         monitoring="autodetect"
+         dynamicConfig="true">
+
+    <cacheManagerEventListenerFactory class="cn.chenzw.springboot.ehcache.event.MyCacheManagerEventListenerFactory"/>
+
+    <cache name="userCache"
+           maxElementsInMemory="100"
+           eternal="false"
+           overflowToDisk="false"
+           timeToLiveSeconds="300"
+           timeToIdleSeconds="0"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <cacheEventListenerFactory class="cn.chenzw.springboot.ehcache.event.MyCacheEventListenerFactory"/>
+        <bootstrapCacheLoaderFactory
+                class="cn.chenzw.springboot.ehcache.loader.MyBootstrapCacheLoaderFactory"></bootstrapCacheLoaderFactory>
+    </cache>
+</ehcache>
