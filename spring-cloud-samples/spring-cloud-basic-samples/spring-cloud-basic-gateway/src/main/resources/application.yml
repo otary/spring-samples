@@ -1,0 +1,86 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 根据注册中心自动注册路由，默认false 重启生效
+          lowerCaseServiceId: true # 将注册表中的服务名转为小写创建路由，默认false，重启生效
+      routes:
+       # 基于路径转发（/path/redirect => https://www.baidu.com）
+       # 路由名称
+       - id: path_route
+         # 跳转路径
+         uri: https://www.baidu.com
+         predicates:
+           # 满足条件才转发
+           - Path=/path/redirect
+
+       # 根据主机名进行转发
+       - id: host_route
+         uri: https://www.chenzw.com
+         predicates:
+           # 满足条件才转发
+           - Host=**.chenzw.cn
+
+       # 根据Cookie匹配转发
+       - id: cookie_route
+         uri: https://www.baidu.com
+         predicates:
+           # - Path=/cookie/redirect
+           - Cookie=redirect,baidu
+
+       # 根据Header匹配转发
+       - id: header_route
+         uri: https://www.baidu.com
+         predicates:
+           # 满足条件才转发
+           - Header=X-Request-Id, \d+
+
+       # 根据Query参数匹配转发
+       - id: query_route
+         uri: https://www.baidu.com
+         predicates:
+           - Query=baz,ba
+
+       # 使用AddRequestHeaderGatewayFilter
+       - id: add_request_header_route
+         uri: https://www.baidu.com
+         predicates:
+           - Path=/header/add
+         filters:
+           - AddRequestHeader=X-Request-Foo, Bar
+
+       # 使用AddRequestParameterGatewayFilter
+       - id: add_request_parameter_route
+         uri: https://www.baidu.com
+         predicates:
+           - Path=/parameter/add
+         filters:
+           - AddRequestParameter=foo, bar
+
+       # 使用AddResponseHeaderGatewayFilter
+       - id: add_request_header_route
+         uri: https://www.baidu.com
+         predicates:
+           - Path=/header/add
+         filters:
+           - AddResponseHeader=X-Response-Foo, Bar
+
+       # 转发请求
+       - id: nacos-client
+         uri: lb://spring-cloud-nacos
+         predicates:
+           - Path=/users/**
+         filters:
+           - Rewrite
+
+server:
+  port: 8770
+
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE #开启跟踪日志用于测试

@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  nacos:
+    image: nacos/nacos-server
+    container_name: nacos
+    ports:
+      - 8848:8848
+    environment:
+      - MODE=standalone
+    volumes:
+      #- /data/nacos/logs:/home/nacos/logs
+      - ./conf:/home/nacos/conf
+    networks:
+      - my_network
+
+  nacos-client:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: nacos-client
+    ports:
+      - 9837:9837
+    environment:
+     - NACOS_HOST=nacos
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true

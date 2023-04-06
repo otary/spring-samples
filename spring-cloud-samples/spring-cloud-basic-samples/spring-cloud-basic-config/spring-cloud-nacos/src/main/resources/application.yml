@@ -1,0 +1,16 @@
+my:
+  name: zhangsan
+  age: 10
+
+server:
+  port: 9837
+
+app:
+  name: my-app-name
+
+spring:
+  profiles:
+    include: base
+
+
+

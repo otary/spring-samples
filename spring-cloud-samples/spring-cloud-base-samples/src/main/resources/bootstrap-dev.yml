@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_HOST:localhost}:${NACOS_PORT:8848}
+        file-extension: yml
+        shared-configs[0]:
+          data-id: common.yml
+          refresh: true
+        namespace: 865760ff-ecc5-44f8-853d-3118d246f79b
