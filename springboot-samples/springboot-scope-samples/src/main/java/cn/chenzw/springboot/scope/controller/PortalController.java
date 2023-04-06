@@ -1,8 +1,7 @@
-package cn.chenzw.springboot.scope.controllers;
+package cn.chenzw.springboot.scope.controller;
 
 import cn.chenzw.springboot.scope.service.PrototypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

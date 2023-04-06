@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.scope.controllers;
+package cn.chenzw.springboot.scope.controller;
 
 import org.junit.Before;
 import org.junit.Test;

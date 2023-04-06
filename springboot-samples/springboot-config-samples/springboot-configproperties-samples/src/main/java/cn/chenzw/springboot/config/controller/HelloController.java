@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.config.controllers;
+package cn.chenzw.springboot.config.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
