@@ -1,6 +1,6 @@
-package cn.chenzw.springboot.mybatis.modules.idkey.repository;
+package cn.chenzw.springboot.mybatis.plus.modules.idkey.repository;
 
-import cn.chenzw.springboot.mybatis.modules.idkey.entity.User;
+import cn.chenzw.springboot.mybatis.plus.modules.idkey.entity.User;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.mybatis.modules.idkey.entity;
+package cn.chenzw.springboot.mybatis.plus.modules.idkey.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

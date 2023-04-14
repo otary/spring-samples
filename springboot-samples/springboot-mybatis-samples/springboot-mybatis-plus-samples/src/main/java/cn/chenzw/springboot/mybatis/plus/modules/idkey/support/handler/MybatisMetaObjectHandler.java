@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.mybatis.modules.idkey.support.handler;
+package cn.chenzw.springboot.mybatis.plus.modules.idkey.support.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

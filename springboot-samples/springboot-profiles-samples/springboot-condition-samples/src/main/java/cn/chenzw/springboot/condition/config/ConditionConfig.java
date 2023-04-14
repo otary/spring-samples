@@ -17,23 +17,23 @@ import org.springframework.context.annotation.Configuration;
 public class ConditionConfig {
 
     /**
-     * 满足WindowsCondition条件，则实例化此bean
+     * 自定义条件 - 满足WindowsCondition条件，则实例化此bean
      *
      * @return
      */
     @Bean
-    @Conditional(WindowsCondition.class)
+    @Conditional({WindowsCondition.class})
     public AbstractTemplate windowsTemplate() {
         return new WindowsTemplate();
     }
 
     /**
-     * 满足LinuxCondition条件，则实例化此bean
+     * 自定义条件 - 满足LinuxCondition条件，则实例化此bean
      *
      * @return
      */
     @Bean
-    @Conditional(LinuxCondition.class)
+    @Conditional({LinuxCondition.class})
     public AbstractTemplate linuxTemplate() {
         return new LinuxTemplate();
     }
@@ -104,7 +104,7 @@ public class ConditionConfig {
      * @return
      */
     @Bean
-    @ConditionalOnProperty(name = "my.name", havingValue = "chenzw")
+    @ConditionalOnProperty(name = "my.name", havingValue = "chenzw", matchIfMissing = false)
     public MyBean myBean5() {
         return new MyBean();
     }
@@ -120,7 +120,6 @@ public class ConditionConfig {
         return new MyBean();
     }
 
-
     /**
      * 缺少指定过滤器时生效
      * 不生效？
@@ -133,5 +132,15 @@ public class ConditionConfig {
         return new MyBean();
     }
 
+
+    /**
+     * WebApplication环境下才生效
+     * @return
+     */
+    @Bean
+    @ConditionalOnWebApplication
+    public MyBean myBean8() {
+        return new MyBean();
+    }
 
 }

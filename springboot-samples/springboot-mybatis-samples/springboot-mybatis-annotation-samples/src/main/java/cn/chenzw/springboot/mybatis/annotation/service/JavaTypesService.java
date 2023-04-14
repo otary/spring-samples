@@ -5,6 +5,10 @@ import cn.chenzw.springboot.mybatis.annotation.repository.JavaTypesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.util.List;
 
 @Service
@@ -22,6 +26,12 @@ public class JavaTypesService {
     }
 
     public void insert(JavaTypesEntity javaTypesEntity) {
+        Connection conn;
+        DatabaseMetaData metaData = conn.getMetaData();
+
+        ResultSet tables = metaData.getTables("", "");
+        ResultSetMetaData metaData1 = tables.getMetaData();
+        metaData1.getColumnType()
         javaTypesMapper.insert(javaTypesEntity);
     }
 

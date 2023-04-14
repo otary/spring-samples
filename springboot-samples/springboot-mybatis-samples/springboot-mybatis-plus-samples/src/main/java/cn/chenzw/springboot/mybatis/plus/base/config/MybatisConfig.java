@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.mybatis.base.config;
+package cn.chenzw.springboot.mybatis.plus.base.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;

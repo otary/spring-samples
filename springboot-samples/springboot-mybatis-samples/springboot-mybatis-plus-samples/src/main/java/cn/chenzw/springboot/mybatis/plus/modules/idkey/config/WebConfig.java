@@ -1,6 +1,6 @@
-package cn.chenzw.springboot.mybatis.modules.idkey.config;
+package cn.chenzw.springboot.mybatis.plus.modules.idkey.config;
 
-import cn.chenzw.springboot.mybatis.modules.idkey.support.CustIdGenerator;
+import cn.chenzw.springboot.mybatis.plus.modules.idkey.support.CustIdGenerator;
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

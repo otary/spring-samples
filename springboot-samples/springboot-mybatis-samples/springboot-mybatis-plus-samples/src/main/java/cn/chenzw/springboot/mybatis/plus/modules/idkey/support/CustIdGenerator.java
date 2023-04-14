@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.mybatis.modules.idkey.support;
+package cn.chenzw.springboot.mybatis.plus.modules.idkey.support;
 
 import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import lombok.extern.slf4j.Slf4j;
