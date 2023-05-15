@@ -40,7 +40,7 @@ public class FormatterControllerTests {
 
     @Test
     public void testUserFormatter() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/formatter//users/99"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/formatter/users/99"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(content().string(equalTo("{\"id\":99,\"name\":\"王五\",\"age\":\"20\"}")));

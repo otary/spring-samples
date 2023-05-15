@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/formatter")
 public class FormatterController {
 
+    /**
+     * @link {cn.chenzw.springboot.web.formatter.UserFormatter}
+     * @param userDto
+     * @return
+     */
     @GetMapping("/users/{userId}")
     public UserDTO getUserInfo(@PathVariable("userId") UserDTO userDto) {
         return userDto;

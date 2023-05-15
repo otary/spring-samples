@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
@@ -166,5 +167,12 @@ public class RestWebControllerTests {
        /* Map<String, List<Resource>> resourceMappings = SpringUtils.getResourceMappings();
         log.info("resourceMappings => {}", resourceMappings);*/
 
+    }
+
+    @Test
+    public void testGetPathArrayVariable() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/rest/getPathArrayVariable/1,2,3"))
+                .andExpect(status().isOk())
+                .andDo(print());
     }
 }

@@ -16,6 +16,7 @@ import org.springframework.web.util.UrlPathHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -91,6 +92,16 @@ public class RestWebController {
         return maps;
     }
 
+    /**
+     * 列表参数
+     *
+     * @param ids
+     * @return
+     */
+    @GetMapping("/getPathArrayVariable/{ids}")
+    public List<String> getPathArrayVariable(@PathVariable List<String> ids) {
+        return ids;
+    }
 
     /**
      * 使用UrlPathHelper工具类
@@ -136,8 +147,8 @@ public class RestWebController {
     /**
      * Enum参数示例
      * GET /getUserState?userState=NORMAL
-     * @return "NORMAL"
      *
+     * @return "NORMAL"
      */
     @GetMapping("/getUserState")
     public UserState getUserState(UserState userState) {
@@ -147,6 +158,7 @@ public class RestWebController {
     /**
      * Enum参数示例
      * GET /getUserState2?userState2=NORMAL
+     *
      * @return "NORMAL"
      */
     @GetMapping("/getUserState2")
@@ -155,6 +167,8 @@ public class RestWebController {
     }
 
     /**
+     * 测试Enum参数
+     *
      * @param status1
      * @return
      */
@@ -162,4 +176,6 @@ public class RestWebController {
     public Commons.Status1 getStatus1(Commons.Status1 status1) {
         return status1;
     }
+
+
 }
