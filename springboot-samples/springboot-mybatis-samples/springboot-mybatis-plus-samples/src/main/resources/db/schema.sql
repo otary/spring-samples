@@ -16,6 +16,7 @@ CREATE TABLE `java_types_entity`  (
 create table tb_user (
    id varchar(64),
    name varchar(255),
+   age int,
    is_deleted bit,
    create_time datetime,
    update_time datetime

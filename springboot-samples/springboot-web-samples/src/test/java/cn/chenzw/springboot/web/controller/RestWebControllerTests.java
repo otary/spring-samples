@@ -164,9 +164,10 @@ public class RestWebControllerTests {
      */
     @Test
     public void testGetResourceMapping() {
-       /* Map<String, List<Resource>> resourceMappings = SpringUtils.getResourceMappings();
-        log.info("resourceMappings => {}", resourceMappings);*/
-
+       /**
+         Map<String, List<Resource>> resourceMappings = SpringUtils.getResourceMappings();
+         log.info("resourceMappings => {}", resourceMappings);
+       */
     }
 
     @Test

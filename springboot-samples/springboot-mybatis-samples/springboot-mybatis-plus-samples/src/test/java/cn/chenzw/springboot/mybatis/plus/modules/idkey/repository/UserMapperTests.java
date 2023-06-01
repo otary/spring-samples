@@ -30,6 +30,7 @@ public class UserMapperTests {
         // 生成UUID
         List<User> users = userMapper.selectList(null);
         log.info("插入结果 => {}", users);
+
     }
 
     /**
@@ -40,6 +41,17 @@ public class UserMapperTests {
         List<User> users = userMapper.selectList(
                 new LambdaQueryWrapper<User>().eq(User::getId, "1")
         );
+        log.info("users => {}", users);
+    }
+
+    @Test
+    public void testUpdate() {
+        User user = new User();
+        user.setName("王五");
+        // user.setAge(28);
+        userMapper.update(user, new LambdaQueryWrapper<User>().eq(User::getId, 1L));
+
+        List<User> users = userMapper.selectList(null);
         log.info("users => {}", users);
     }
 
