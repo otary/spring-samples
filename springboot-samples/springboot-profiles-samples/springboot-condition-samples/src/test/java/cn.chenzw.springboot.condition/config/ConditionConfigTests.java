@@ -18,7 +18,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringBootTest(classes = ConditionSamplesApp.class)
 public class ConditionConfigTests {
 
-
     @Autowired
     AbstractTemplate abstractTemplate;
 

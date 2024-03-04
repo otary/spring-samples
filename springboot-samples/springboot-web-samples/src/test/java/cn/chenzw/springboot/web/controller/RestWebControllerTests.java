@@ -176,4 +176,19 @@ public class RestWebControllerTests {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
+
+    @Test
+    public void testGetListVariable() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/rest/getListVariable?ids=111&ids=222"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+
+    @Test
+    public void testGetBoolean() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/rest/getBoolean"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
 }

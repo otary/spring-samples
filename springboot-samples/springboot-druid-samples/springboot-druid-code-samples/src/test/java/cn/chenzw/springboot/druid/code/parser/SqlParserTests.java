@@ -34,13 +34,15 @@ public class SqlParserTests {
         MySqlSchemaStatVisitor visitor = new MySqlSchemaStatVisitor();
         sqlStatement.accept(visitor);
 
+        log.info(" => {}", visitor.getTables());
         log.info("tables => {}", visitor.getTables());
         log.info("columns => {}", visitor.getColumns());
 
         for (TableStat.Column column : visitor.getColumns()) {
-            System.out.println(column.getFullName());
-            System.out.println(column.getAttributes());
-            System.out.println(column.getDataType());
+            log.info("columnName => {}, dataType => {}, isPrimaryKey = {}", column.getName(), column.getDataType(), column.isPrimaryKey());
+            log.info("columnName => {}", column.getName());
+            /*System.out.println(column.getFullName());
+            System.out.println(column.getAttributes());*/
         }
 
     }

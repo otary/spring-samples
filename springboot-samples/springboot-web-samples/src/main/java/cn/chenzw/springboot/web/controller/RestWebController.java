@@ -10,6 +10,7 @@ import cn.chenzw.springboot.web.enums.UserState2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UrlPathHelper;
@@ -103,6 +104,19 @@ public class RestWebController {
         return ids;
     }
 
+
+    /**
+     * 列表参数
+     *
+     * @param ids
+     * @return
+     */
+    @GetMapping("/getListVariable")
+    public List<String> getListVariable(@RequestParam("ids") List<String> ids) {
+        log.info("ids => {}", ids);
+        return ids;
+    }
+
     /**
      * 使用UrlPathHelper工具类
      *
@@ -178,4 +192,20 @@ public class RestWebController {
     }
 
 
+    /**
+     * Boolean测试
+     *
+     * @param b
+     * @return
+     */
+    @GetMapping("/getBoolean")
+    public Boolean getBoolean(Boolean b) {
+        log.info("b => {}", b);
+
+        // 不传时未null值，报错
+        if (!b) {
+
+        }
+        return b;
+    }
 }
