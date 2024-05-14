@@ -1,0 +1,19 @@
+logging:
+  level:
+    org.apache.coyote.http11.Http11InputBuffer: debug
+
+
+spring:
+  datasource:
+    # data: classpath:db/data.sql
+    driver-class-name: org.h2.Driver
+    password: ''
+    # schema: classpath:db/schema.sql
+    url: jdbc:h2:mem:flowable
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: true

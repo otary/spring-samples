@@ -3,6 +3,7 @@ package cn.chenzw.springboot.web.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 import org.springframework.ui.context.Theme;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,19 +21,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.function.Predicate;
 
 @Slf4j
 @RestController
 @RequestMapping("/context")
 public class ContextController {
 
-
     @Autowired
     WebApplicationContext webApplicationContext;
 
     @Autowired
     Environment environment;
-
 
     @GetMapping("/findWebApplicationContext")
     public void findWebApplicationContext(HttpServletRequest request) {
@@ -99,6 +99,21 @@ public class ContextController {
     @GetMapping("/env")
     public String getEnvironment(String key) {
         return environment.getProperty(key);
+    }
+
+    /**
+     * 判断是否 dev profiles
+     *
+     * @return
+     */
+    @GetMapping("/isDev")
+    public Boolean testIsDevProfiles() {
+        return environment.acceptsProfiles(new Profiles() {
+            @Override
+            public boolean matches(Predicate<String> activeProfiles) {
+                return activeProfiles.test("test");
+            }
+        });
     }
 
 }

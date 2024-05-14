@@ -50,6 +50,7 @@
         <module>springboot-wx-java-samples</module>
         <module>sharding-jdbc-samples</module>
         <module>springboot-cas-samples</module>
+        <module>springboot-flowable-samples</module>
     </modules>
 
     <properties>

@@ -1,4 +1,4 @@
-package cn.chenzw.springboot.filters.controllers;
+package cn.chenzw.springboot.filters.controller;
 
 import cn.chenzw.springboot.filters.FiltersSamplesApp;
 import cn.chenzw.springboot.filters.filters.OnceFilter;
