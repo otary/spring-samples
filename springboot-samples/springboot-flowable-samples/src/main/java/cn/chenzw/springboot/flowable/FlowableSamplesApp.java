@@ -7,7 +7,6 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 public class FlowableSamplesApp {
 
-
     public static void main(String[] args) {
         SpringApplication.run(FlowableSamplesApp.class, args);
     }

@@ -7,6 +7,7 @@ import org.flowable.engine.RuntimeService;
 import org.flowable.engine.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,25 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/flowable")
 public class FlowableController {
 
-   /*
     @Autowired
     RuntimeService runtimeService;
 
     @Autowired
-    TaskService taskService;
+    private TaskService taskService;
 
     @Autowired
     RepositoryService repositoryService;
 
     @Autowired
     ProcessEngine processEngine;
-    */
 
+    @PostMapping("/process")
+    public void startProcessInstance() {
+        runtimeService.startProcessInstanceByKey("testProcess");
+    }
 
     @GetMapping
     public String index(String name) {
         log.info("hello world!");
-
         return "hello world!";
     }
 }

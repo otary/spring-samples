@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 )
 public class HelloBean {
 
-
     private long id;
     private String name;
     private int age;
