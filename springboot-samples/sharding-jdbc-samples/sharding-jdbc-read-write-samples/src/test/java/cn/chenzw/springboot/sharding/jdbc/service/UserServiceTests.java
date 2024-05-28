@@ -18,7 +18,6 @@ public class UserServiceTests {
     @Autowired
     private UserService userService;
 
-
     @Test
     public void test() throws InterruptedException {
         // 写数据库（主数据源(ds1)）

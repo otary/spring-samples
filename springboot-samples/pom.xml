@@ -51,6 +51,7 @@
         <module>sharding-jdbc-samples</module>
         <module>springboot-cas-samples</module>
         <module>springboot-flowable-samples</module>
+        <module>liteflow-samples</module>
     </modules>
 
     <properties>
