@@ -52,6 +52,7 @@
         <module>springboot-cas-samples</module>
         <module>springboot-flowable-samples</module>
         <module>liteflow-samples</module>
+        <module>springboot-esapi-samples</module>
     </modules>
 
     <properties>
