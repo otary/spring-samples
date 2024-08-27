@@ -4,17 +4,18 @@ import cn.chenzw.springboot.web.advice.annotation.ResponseBodyBase64;
 import cn.chenzw.springboot.web.annotation.ArrayParameter;
 import cn.chenzw.springboot.web.constatns.Commons;
 import cn.chenzw.springboot.web.domain.dto.ArrayQueryDTO;
+import cn.chenzw.springboot.web.domain.dto.DateDTO;
 import cn.chenzw.springboot.web.domain.dto.UserDTO;
 import cn.chenzw.springboot.web.enums.UserState;
 import cn.chenzw.springboot.web.enums.UserState2;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UrlPathHelper;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.Map;
 public class RestWebController {
 
     @GetMapping("/hello")
-    public String hello(HttpServletRequest request) {
+    public String hello(ServletRequest request) {
         return "hello!";
     }
 
@@ -207,5 +208,10 @@ public class RestWebController {
 
         }
         return b;
+    }
+
+    @PostMapping("/date-format")
+    public void dateFormat(@RequestBody DateDTO dateDTO) {
+        log.info("dateDTO => {}", dateDTO);
     }
 }

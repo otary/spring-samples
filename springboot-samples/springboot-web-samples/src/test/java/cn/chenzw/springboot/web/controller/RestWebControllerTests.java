@@ -65,8 +65,8 @@ public class RestWebControllerTests {
     @Test
     public void testPostArrayPojoQuery() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.post("/rest/postArrayPojoQuery")
-                .content("[{\"name\":\"zhangsan\",\"age\":12},{\"name\":\"lisi\",\"age\":23}]")
-                .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                        .content("[{\"name\":\"zhangsan\",\"age\":12},{\"name\":\"lisi\",\"age\":23}]")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
                 .andDo(print());
     }
@@ -90,8 +90,8 @@ public class RestWebControllerTests {
     @Test
     public void testPostMapQuery() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.post("/rest/postMapQuery")
-                .content("{\"xxx\":\"111\"}")
-                .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                        .content("{\"xxx\":\"111\"}")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
                 .andDo(print());
     }
@@ -99,8 +99,8 @@ public class RestWebControllerTests {
     @Test
     public void testPostHello() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.post("/rest/hello")
-                .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content("{\"userName\":\"张三\",\"age\":20}"))
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\"userName\":\"张三\",\"age\":20}"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("hello, 张三")));
     }
@@ -109,7 +109,7 @@ public class RestWebControllerTests {
     public void testPostHelloXml() throws Exception {
         // 需要再添加一个支持XML的解析器HttpMessageConverter
         this.mockMvc.perform(MockMvcRequestBuilders.get("/rest/arrayQuery?ids=1&ids=2&name=xxx")
-                .header("Accept", "application/xml"))
+                        .header("Accept", "application/xml"))
                 .andExpect(status().isOk())
                 .andDo(print());
     }
@@ -164,10 +164,10 @@ public class RestWebControllerTests {
      */
     @Test
     public void testGetResourceMapping() {
-       /**
+        /**
          Map<String, List<Resource>> resourceMappings = SpringUtils.getResourceMappings();
          log.info("resourceMappings => {}", resourceMappings);
-       */
+         */
     }
 
     @Test
@@ -184,10 +184,23 @@ public class RestWebControllerTests {
                 .andDo(print());
     }
 
-
     @Test
     public void testGetBoolean() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("/rest/getBoolean"))
+                .andExpect(status().isOk())
+                .andDo(print());
+    }
+
+    @Test
+    public void testDateFormat() throws Exception {
+        this.mockMvc.perform(
+                MockMvcRequestBuilders.post("/rest/date-format")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+                        .content("{\n" +
+                                "    \"isoDateTime\": \"2024-08-27T04:46:06.964Z\",\n" +
+                                "    \"date\": \"2024-08-27 04:46:06\"\n" +
+                                "}")
+                )
                 .andExpect(status().isOk())
                 .andDo(print());
     }
