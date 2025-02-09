@@ -6,55 +6,13 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>springboot-helloworld-samples</module>
-        <module>springboot-mybatis-samples</module>
-        <module>springboot-swagger-samples</module>
-        <module>springboot-aop-samples</module>
-        <module>springboot-async-samples</module>
-        <module>springboot-admin-samples</module>
-        <module>springboot-web-samples</module>
-        <module>springboot-banner-samples</module>
-        <module>springboot-datasources-samples</module>
-        <module>springboot-validation-samples</module>
-        <module>springboot-druid-samples</module>
-        <module>springboot-filters-samples</module>
-        <module>springboot-profiles-samples</module>
-        <module>springboot-task-samples</module>
-        <module>springboot-views-samples</module>
-        <module>springboot-shiro-samples</module>
-        <module>springboot-security-samples</module>
-        <module>springboot-jpa-samples</module>
-        <module>springboot-mail-samples</module>
-        <module>springboot-container-samples</module>
-        <module>springboot-cache-samples</module>
-        <module>springboot-websocket-samples</module>
-        <module>springboot-redis-samples</module>
-        <module>springboot-config-samples</module>
-        <module>spring-boot-starter</module>
-        <module>springboot-batch-samples</module>
-        <module>springboot-integration-samples</module>
-        <module>springboot-jmx-samples</module>
-        <module>springboot-log-samples</module>
-        <module>springboot-test-samples</module>
-        <module>springboot-session-samples</module>
-        <module>springboot-liquibase-samples</module>
-        <module>springboot-pid-samples</module>
-        <module>springboot-webflux-samples</module>
-        <module>springboot-junit5-samples</module>
-        <module>springboot-resource-message-samples</module>
-        <module>springboot-event-samples</module>
-        <module>springboot-slot-samples</module>
-        <module>springboot-design-pattern-samples</module>
-        <module>springboot-scope-samples</module>
-        <module>springboot-wx-java-samples</module>
-        <module>sharding-jdbc-samples</module>
-        <module>springboot-cas-samples</module>
-        <module>springboot-flowable-samples</module>
-        <module>liteflow-samples</module>
-        <module>springboot-esapi-samples</module>
-        <module>springboot-sa-token-samples</module>
-    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.12</version>
+        <relativePath/>
+    </parent>
 
     <properties>
         <!--指定Maven用什么编码来读取源码及文档 -->
@@ -62,12 +20,11 @@
         <!--指定Maven用什么编码来呈现站点的HTML文件 -->
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
+        <java.version>17</java.version>
 
-        <springboot-admin.version>2.1.5</springboot-admin.version>
         <commons-io.version>2.6</commons-io.version>
         <commons-codec.version>1.12</commons-codec.version>
         <commons-lang3.version>3.9</commons-lang3.version>
@@ -81,11 +38,6 @@
         <pagehelper.version>1.2.11</pagehelper.version>
     </properties>
 
-    <!-- <parent>
-         <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-parent</artifactId>
-         <version>2.1.5.RELEASE</version>
-     </parent>-->
 
     <dependencyManagement>
         <dependencies>

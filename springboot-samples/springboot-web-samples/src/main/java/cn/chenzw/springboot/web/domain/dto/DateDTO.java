@@ -3,7 +3,7 @@ package cn.chenzw.springboot.web.domain.dto;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -14,7 +14,7 @@ public class DateDTO {
 
     // iso用Date对象接收报错
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDate isoDateTime;
+    private LocalDateTime isoDateTime;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
