@@ -8,9 +8,10 @@ spring:
     data: classpath:db/data.sql
 
 # mybatis配置
-mybatis:
+mybatis-plus:
   mapper-locations: classpath:mybatis/mapper/**/*.xml
   configuration:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: cn.chenzw.springboot.mybatis.modules.ext.log.MybatisSqlPrintStatementOutImpl

@@ -1,6 +1,5 @@
 package cn.chenzw.springboot.mybatis.modules.plugin.service;
 
-import cn.chenzw.springboot.mybatis.MybatisPluginSamplesApp;
 import cn.chenzw.springboot.mybatis.modules.plugin.entity.JavaTypesEntity;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -10,8 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,9 +19,8 @@ import java.util.Date;
 import java.util.List;
 
 @Slf4j
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
-@SpringBootTest(classes = MybatisPluginSamplesApp.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class JavaTypesServiceTests {
 
     @Autowired
@@ -32,7 +29,6 @@ public class JavaTypesServiceTests {
     @Test
     public void testListAll() {
         List<JavaTypesEntity> entity = javaTypesService.listAll();
-
         log.info(" => {}", entity);
     }
 
@@ -79,7 +75,6 @@ public class JavaTypesServiceTests {
     @Test
     public void testListById() {
         List<JavaTypesEntity> entities = javaTypesService.listById(1);
-
         log.info(" => {}", entities);
     }
 

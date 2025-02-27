@@ -11,7 +11,6 @@
         from java_types_entity
     </select>
 
-
     <insert id="insertBatch">
         <if test="javaTypesEntities != null and javaTypesEntities.size() > 0">
             insert into java_types_entity (
@@ -75,7 +74,6 @@
             </foreach>
         </if>
     </insert>
-
 
     <select id="listById" resultMap="javaTypesEntity">
         select *
