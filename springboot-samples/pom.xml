@@ -54,6 +54,7 @@
         <module>liteflow-samples</module>
         <module>springboot-esapi-samples</module>
         <module>springboot-sa-token-samples</module>
+        <module>springboot-mapstruct-samples</module>
     </modules>
 
     <properties>
@@ -106,19 +107,16 @@
                 <artifactId>spring-boot-admin-starter-client</artifactId>
                 <version>${springboot-admin.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-server-ui</artifactId>
                 <version>${springboot-admin.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
